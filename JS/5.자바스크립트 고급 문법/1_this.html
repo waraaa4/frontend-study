@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button type="button" onclick="doSearch(this);">조회</button>
+    <select onchange="doChange(this);">
+      <option value="1">A</option>
+      <option value="2">B</option>
+      <option value="3">C</option>
+      <option value="4">D</option>
+    </select>
+
+    <script>
+      //this 키워드는 위치에 따라 가리키는 대상이 달라진다
+
+      //전역 컨텍스트에서: this는 Window 객체
+      console.log(this); //Window
+
+      //함수 안에서: 호출방법에 따라 this가 달라짐
+      //별도의 this가 설정되지 않은 경우에는 전역객체(Window)로 설정됨
+      function myFunction() {
+        console.log(this); //Window
+      }
+      myFunction();
+
+      //HTML DOM요소에서 이벤트가 발생할때,
+      //이벤트 핸들러의 this는 이벤트가 발생한 DOM 요소를 가리킴
+      function doSearch(obj) {
+        console.log(obj); //Button
+      }
+
+      function doChange(obj) {
+        console.log(obj); //Select
+        console.log(obj.value); //선택된 옵션의 값
+      }
+
+      //객체 안에서: 해당 객체
+      let person = {
+        firstName: "John",
+        lastName: "Doe",
+        getFullName: function () {
+          return this.firstName + " " + this.lastName; //person 객체
+        },
+      };
+      console.log(person.getFullName()); //"John Doe"
+    </script>
+  </body>
+</html>
