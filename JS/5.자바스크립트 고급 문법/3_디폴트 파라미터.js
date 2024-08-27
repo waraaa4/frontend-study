@@ -14,7 +14,7 @@ function multiply(a, b) {
 }
 multiply(5); // 정상적으로 5가 출력됨
 
-//함수의 파라미터에 기본값 설정하기
+//디폴트 파라미터: 함수의 파라미터에 기본값 설정하기
 //b 값이 전달됬으면 그대로 사용하고, 전달되지 않았으면 기본값으로 설정
 function multiply(a, b = 1) {
   console.log(a * b);
