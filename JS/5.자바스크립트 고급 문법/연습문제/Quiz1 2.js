@@ -6,7 +6,7 @@ function greet(name, greeting = "안녕하세요") {
 console.log(greet("철수", "반갑습니다")); //"반갑습니다, 철수님!" 출력
 console.log(greet("훈이")); //"안녕하세요, 훈이님!" 출력
 
-//Q.학생의 이름, 영어, 수학, 국어 점수를 입력받아 평균점수를 출력하는 함수를 정의하세요.
+//Q.학생의 영어, 수학, 국어 점수를 입력받아 평균점수를 출력하는 함수를 정의하세요.
 function calculateGrade(name, eng = 0, math = 0, kor = 0) {
   // 평균 점수 계산
   const sum = eng + math + kor;
