@@ -29,9 +29,11 @@
       var select = document.getElementById("sel");
       select.innerHTML = '<option value="">선택하세요</option>';
 
-      // insertAdjacentHTML함수: 엘리먼트에 접근해서 자식으로 또는 옆쪽에 노드 추가
       function myFunction() {
         let ul = document.getElementById("myUL");
+        
+        // insertAdjacentHTML함수: 엘리먼트에 접근해서 자식으로 또는 옆쪽에 노드 추가
+        // 인자: 포지션(위치), 새로운엘리먼트
         ul.insertAdjacentHTML("afterbegin", "<li>새로운항목</li>");
       }
 
