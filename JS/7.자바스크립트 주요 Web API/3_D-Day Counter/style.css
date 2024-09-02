@@ -4,6 +4,10 @@ flex-direction: column; 아이템들을 수직 방향으로 정렬
 align-items: center; 수평 축에서 가운데로 정렬
 (align-items는 flex-direction와 교차 축)
 */
+html {
+    font-size: 16px;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -11,7 +15,7 @@ body {
 }
   
 h1 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
   
 button {

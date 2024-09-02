@@ -27,16 +27,18 @@ function getDday () {
 
 // 2.남은 시간을 계산하고 화면에 표시하는 함수
 // dday 매개변수는 나중에 추가..
-function count (dday) {
+function count () {
     // 디데이 가져오기
-    // const dday = getDday();
+    const dday = getDday();
 
     // 현재 시간 가져오기
     const now = new Date();
+    // console.log(now.toLocaleString());
 
     // 목표날짜를 자정으로(00:00:00) 설정
     // setHours 함수로 들어가서 선택적(optional) 파라미터 보기
     const target = new Date(dday).setHours(0, 0, 0, 0);
+    // console.log(target.toLocaleString());
 
     // ms -> s 단위로 변경
     const remaining = (target - now) / 1000;
@@ -48,26 +50,26 @@ function count (dday) {
       return;
     }
     
-    // 남은 시간을 (일, 시간, 분, 초)로 계산하기
-    // remaining은 초 단위이며, 소수점 이하를 버리기 위해 Math.floor 사용
-    // 예: remaining = 124929.943로 설정
-    // 124929 / 3600 ≈ 34시간 -> 1일 10 시간
-    // 124929 / 60 ≈ 2082분 -> % 60 = 42분
-    // 124929 % 60 = 9초
-    const remainObj = {
-      date: Math.floor(remaining / 3600 / 24), 
-      hour: Math.floor(remaining / 3600) % 24, //하루를 초과하는 나머지 시간
-      min: Math.floor(remaining / 60) % 60, //1시간을 초과한 나머지 분
-      sec: Math.floor(remaining) % 60, //1분을 초과한 나머지 초
-    };
+    // // 남은 시간을 (일, 시간, 분, 초)로 계산하기
+    // // remaining은 초 단위이며, 소수점 이하를 버리기 위해 Math.floor 사용
+    // // 예: remaining = 124929.943로 설정
+    // // 124929 / 3600 ≈ 34시간 -> 1일 10 시간
+    // // 124929 / 60 ≈ 2082분 -> % 60 = 42분
+    // // 124929 % 60 = 9초
+    // const remainObj = {
+    //   date: Math.floor(remaining / 3600 / 24), 
+    //   hour: Math.floor(remaining / 3600) % 24, //하루를 초과하는 나머지 시간
+    //   min: Math.floor(remaining / 60) % 60, //1시간을 초과한 나머지 분
+    //   sec: Math.floor(remaining) % 60, //1분을 초과한 나머지 초
+    // };
 
-    console.log(remainObj.date, remainObj.hour, remainObj.min, remainObj.sec);
+    // console.log(remainObj.date, remainObj.hour, remainObj.min, remainObj.sec);
 
-    // 남은시간을 화면에 표시
-    document.getElementById("day").textContent = remainObj.date;
-    document.getElementById("hour").textContent = remainObj.hour;
-    document.getElementById("min").textContent = remainObj.min;
-    document.getElementById("sec").textContent = remainObj.sec;
+    // // 남은시간을 화면에 표시
+    // document.getElementById("day").textContent = remainObj.date;
+    // document.getElementById("hour").textContent = remainObj.hour;
+    // document.getElementById("min").textContent = remainObj.min;
+    // document.getElementById("sec").textContent = remainObj.sec;
 };
 
 //3.타이머 시작 함수

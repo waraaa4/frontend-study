@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      //브라우저에서 Storage를 사용할 수 있는지 체크
-      if (typeof Storage !== "undefined") {
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //브라우저에서 Storage를 사용할 수 있는지 체크
+    if (typeof Storage !== "undefined") {
+      console.log('스토리지를 사용할 수 있습니다~!');
 
-        //로컬 스토리지 객체를 사용하여, 로컬 스토리지에 title 키에 "" 저장
-        localStorage.setItem("hi", "안녕~"); 
+      //로컬 스토리지 객체를 사용하여, 로컬 스토리지에 데이터 추가
+      localStorage.setItem("hi", "안녕~");
 
-        const users = [
-          { id: 1, name: "짱구" },
-          { id: 2, name: "철수" },
-        ];
+      const users = [
+        { id: 1, name: "짱구" },
+        { id: 2, name: "철수" },
+      ];
 
-        //로컬스토리지에 users 키에 users 배열을 저장
-        //값은 문자열로 변환한 후 저장
-        localStorage.setItem("users", JSON.stringify(users)); 
-      }
-    </script>
-  </body>
+      //객체는 그냥 추가x 문자열로 변환한 후에 추가할것
+      //로컬스토리지에 users 키에 users 배열을 저장
+      localStorage.setItem("users", JSON.stringify(users));
+    }
+  </script>
+</body>
+
 </html>
 
 <!-- 
