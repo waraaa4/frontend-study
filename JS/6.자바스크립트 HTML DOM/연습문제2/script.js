@@ -1,7 +1,8 @@
 
+//상품의 수량은 타입체크 또는 정규표현식으로 확인
 function validateQuantity(field) {
     var regex = /^[0-9]*$/; // 숫자만 허용
-    if (!regex.test(field.value) || field.value.trim() === "") {
+    if (regex.test(field.value) == false) {
         field.style.borderColor = "red";
     } else {
         field.style.borderColor = "";
@@ -9,14 +10,16 @@ function validateQuantity(field) {
 }
 
 function validatePrice(field) {
-    var regex = /^[0-9]*(\.[0-9]{1,2})?$/; // 숫자와 소수점 2자리까지 허용
-    if (!regex.test(field.value) || field.value.trim() === "") {
+    var regex = /^[0-9]*$/;
+    if (!regex.test(field.value)) {
         field.style.borderColor = "red";
     } else {
         field.style.borderColor = "";
     }
 }
 
+//"장바구니 추가" 버튼을 누르면 폼이 유효한지 검사하고
+//유효하면 장바구니에 추가하고, 유효하지 않을 경우 경고 메시지를 표시
 function validateAndAddItem() {
     var itemName = document.getElementById("itemName");
     var itemQuantity = document.getElementById("itemQuantity");
@@ -48,11 +51,15 @@ function validateAndAddItem() {
         return; 
     }
 
+    // 상품의 이름, 수량, 가격을 전달하여 장바구니에 추가
     addItemToCart(itemName.value.trim(), parseInt(itemQuantity.value), parseFloat(itemPrice.value));
 }
 
+// 상품의 이름, 수량, 가격
 function addItemToCart(name, quantity, price) {
+    // ul 가져오기
     var cartList = document.getElementById("cartList");
+    // 속성 선택자를 사용하여 상품이 있는지 확인 li[data-name="바나나"] 
     var existingItem = document.querySelector(`li[data-name="${name}"]`);
 
     if (existingItem) {
@@ -67,12 +74,14 @@ function addItemToCart(name, quantity, price) {
         existingPrice.textContent = newPrice;
     } else {
         // 새로운 항목 추가
-        var listItem = document.createElement("li");
-        listItem.setAttribute("data-name", name);
-        listItem.innerHTML = `${name} - <span class="itemQuantity">${quantity}</span>개 
-                              <span class="itemPrice">${(quantity * price).toFixed(2)}</span>원
-                              <button onclick="removeItem(this)">제거</button>`;
-        cartList.appendChild(listItem);
+        // 완전한 엘리먼트 형태의 문자열 만들기
+        // 중간중간 콘솔창에서 확인할 것
+        var newItem = `<li data-name = "${name}"> 
+        ${name} - <span class="itemQuantity">${quantity}</span>개 
+        <span class="itemPrice">${(quantity * price).toFixed(2)}</span>원 
+        <button onclick="removeItem(this)">제거</button></li>`;
+
+        cartList.insertAdjacentHTML("beforeend", newItem);
     }
 
     updateTotal();
@@ -89,10 +98,12 @@ function updateTotal() {
     var totalQuantity = 0;
     var totalPrice = 0.0;
 
+    // 전체 수량 계산
     cartList.querySelectorAll(".itemQuantity").forEach(function(quantitySpan) {
         totalQuantity += parseInt(quantitySpan.textContent);
     });
 
+    // 전체 가격 계산
     cartList.querySelectorAll(".itemPrice").forEach(function(priceSpan) {
         totalPrice += parseFloat(priceSpan.textContent);
     });
