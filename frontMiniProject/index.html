@@ -6,8 +6,24 @@
   <title>Document</title>
   <link rel="stylesheet" href="main.css">
   <script src="main.js" defer></script>
+  <script src="main2.js" defer></script>
 </head>
 <body>
-  <h1>To Do List</h1>
+  <div class="wrap">
+    <div class="todo-container">
+      <h1>To do List</h1>
+      <!-- 할 일 추가버튼 -->
+      <div class="todo-input">
+          <input type="text" id="todo-input">
+          <button id="add-todo-btn">+</button>
+      </div>
+      <!-- 할 일 리스트 -->
+      <ul id="todo-list">
+          <!-- 할 일 목록이 추가 -->
+      </ul>
+      <div id="todo-counts">총 0 개 완료 0 개</div>
+      <button id="clear-all-btn">전체 삭제</button>
+  </div>
+  </div>
 </body>
 </html>

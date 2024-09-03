@@ -1,0 +1,142 @@
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.todo-container {
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.todo-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+#add-todo-btn {
+    width: 12%;
+    background-color: #dedede;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#add-todo-btn:hover {
+    background-color: #b7b7b7;
+}
+
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+#todo-list li {
+    margin: 10px 0;
+    padding: 10 0px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-checkbox {
+    appearance: none; 
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+}
+.todo-checkbox:checked {
+    border-color: #2196F3;
+    background-color: #2196F3;
+}
+.todo-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+/* 체크시 가운데 줄 */
+.completed {
+    text-decoration: line-through;
+    text-decoration-color: black;
+}
+
+.todo-field {
+    width: 57%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    background-color: #f6f6f6;
+}
+
+.todo-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.todo-buttons button {
+    background-color: #ddd;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.todo-buttons button:hover {
+    background-color: #b7b7b7;
+}
+
+/* 할 일 개수 표시 */
+#todo-counts {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+/* 전체 삭제 버튼 */
+#clear-all-btn {
+    background-color: #ddd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+#clear-all-btn:hover {
+    background-color: #b7b7b7;
+}
+
+
