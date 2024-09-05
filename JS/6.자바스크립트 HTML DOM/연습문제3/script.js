@@ -109,5 +109,5 @@ function validate(f){
       tableBody.insertAdjacentHTML("beforeend", newRow);
   
       // 폼을 리셋하여 다음 입력을 준비
-      document.getElementById('signup-form').reset();
+      document.querySelector('form').reset();
   }
