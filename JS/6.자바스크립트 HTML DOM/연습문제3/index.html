@@ -5,7 +5,7 @@
   <title>회원가입</title>
   <link rel="stylesheet" href="./style.css">
   <!-- <script src="./script.js" defer></script> -->
-  <script src="연습.js"></script>
+  <script src="연습.js" defer></script>
 </head>
 <body>
   <div id="flex-container">
@@ -73,6 +73,18 @@
     <!-- 새로 추가된 div -->
     <div id="info-table" class="container">
       <h1>회원정보 목록</h1>
+
+      <div>
+        <select id="searchType">
+          <option value="id">아이디</option>
+          <option value="name">이름</option>
+          <option value="interest">관심분야</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="검색어 입력" />
+        <button onclick="searchMember()">검색</button>
+        <button onclick="resetBtn()">검색 초기화</button>
+      </div>
+
       <p>아래는 회원표입니다.</p>
       <hr />
 
