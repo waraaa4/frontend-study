@@ -44,7 +44,88 @@ for(let i=0; i <arr2.length; i++){
   if(type == "number"){
     sum = sum + arr2[i];
   }
-  
 }
 console.log(sum);
 
+function addNum(arr, value) {
+  return arr.includes(value);
+}
+console.log(addNum(["apple", "banana", "cherry"], "banana"));
+
+
+function arr3(arr) {
+  let newArr = []
+  for(let i=0; i<arr.length; i++){
+    if(typeof arr[i] == "string"){
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+console.log(arr3([1, "apple", true, "banana", 42, "cherry"]));
+
+
+function stud(students, subject) {
+  
+  let all = 0;
+  let length = students.length;
+
+  for(const student of students){
+    all = all + student[subject];
+  }
+
+  return all / length;
+}
+const students = [
+  { name: "둘리", math: 90, english: 85 },
+  { name: "또치", math: 80, english: 95 },
+  { name: "도우너", math: 70, english: 75 },
+];
+let result = stud(students, "math");
+console.log(result);
+
+
+  function calculateAvgSalary(employees, position) {
+    let total = 0;
+    let count = 0;
+
+    for (const employee of employees) {
+      if (employee.position === position) {
+        total = total + employee.salary;
+        count++;
+      }
+    }
+
+    return total / count;
+  }
+
+  const employees = [
+    { name: "짱구", position: "부장", salary: 500 },
+    { name: "철수", position: "차장", salary: 380 },
+    { name: "훈이", position: "사원", salary: 260 },
+    { name: "맹구", position: "차장", salary: 420 },
+    { name: "유리", position: "사원", salary: 220 },
+  ];
+
+console.log(calculateAvgSalary(employees, "사원"));
+
+
+const employee11 = {
+  name: "철수",
+  position: "사원",
+  salary: 300
+};
+
+for (const key in employee11) {
+  console.log("in: " + employee11[key]);
+}
+
+const person1 = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
+};
+
+for (const key in person1) {
+  console.log(key, person1[key]); // 'name John', 'age 30', 'city New York' 출력
+}

@@ -1,4 +1,3 @@
-
 //상품의 수량은 타입체크 또는 정규표현식으로 확인
 function validateQuantity(field) {
     var regex = /^[0-9]*$/; // 숫자만 허용
@@ -76,10 +75,9 @@ function addItemToCart(name, quantity, price) {
         // 새로운 항목 추가
         // 완전한 엘리먼트 형태의 문자열 만들기
         // 중간중간 콘솔창에서 확인할 것
-        var newItem = `<li data-name = "${name}"> 
-        ${name} - <span class="itemQuantity">${quantity}</span>개 
-        <span class="itemPrice">${(quantity * price).toFixed(2)}</span>원 
-        <button onclick="removeItem(this)">제거</button></li>`;
+        var newItem = `<li data-name = "${name}"> ${name} - <span class="itemQuantity">
+        ${quantity}</span>개 <span class="itemPrice">${(quantity * price).toFixed(2)}</span>원 <button onclick="removeItem(this)">제거</button>
+        </li>`;
 
         cartList.insertAdjacentHTML("beforeend", newItem);
     }

@@ -115,16 +115,17 @@ function start (prevDate) {
 function stop () {
   // 모든 타이머 중지
   for (let i = 0; i < intervalIdArr.length; i++) {
-    let id = intervalIdArr[i];
-    clearInterval(id);
+    clearInterval(intervalIdArr[i]);
   }
   intervalIdArr = []; //배열 비우기
 };
 
 // 5.카운터를 초기화하는 함수
 function reset () {
-  
-  stop();
+  for (let i = 0; i < intervalIdArr.length; i++) {
+    clearInterval(intervalIdArr[i]);
+  }
+  intervalIdArr = [];
 
   // 남은 시간을 0으로 초기화
   document.getElementById("day").textContent = "0";
