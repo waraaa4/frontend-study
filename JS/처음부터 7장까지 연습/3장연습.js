@@ -129,3 +129,44 @@ const person1 = {
 for (const key in person1) {
   console.log(key, person1[key]); // 'name John', 'age 30', 'city New York' 출력
 }
+
+// 16. 학생 객체 배열을 입력 받아, 특정 과목의 평균 점수를 반환하는 함수를 만드세요
+// 입력: students, ‘math’
+// 반환: 80
+function stud(students11, math) {
+  let sum11 = 0;
+  let length11 = students11.length;
+  console.log(length11);
+
+  for(const value of students11){
+    sum11 = sum11 + value.math;
+  }
+  return sum11 / length11;
+}
+
+const students11 = [
+  { name: "둘리", math: 90, english: 85 },
+  { name: "또치", math: 80, english: 95 },
+  { name: "도우너", math: 70, english: 75 },
+];
+
+let result11 = stud(students11, "math");
+console.log(result11);
+
+
+// Q17. 직원 객체 배열을 입력 받아, 특정 직급의 평균 월급을 반환하는 함수를 만드세요
+// 입력: employees, ‘사원’
+// 반환: 240
+function asd(params) {
+  
+}
+
+const employees22 = [
+  { name: "짱구", position: "부장", salary: 500 },
+  { name: "철수", position: "차장", salary: 380 },
+  { name: "훈이", position: "사원", salary: 260 },
+  { name: "맹구", position: "차장", salary: 420 },
+  { name: "유리", position: "사원", salary: 220 },
+];
+
+let result22 = asd(employees22, "사원");
